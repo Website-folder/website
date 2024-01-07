@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Thomas Cavanagh</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script:400,700);
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #219ebc;
+  color: yellow;
+  text-align: center;
+   font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+h1, p {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  font-size: 2rem;
+   font-family: Arial, Helvetica, sans-serif;
+}
+small {
+  display: block;
+  padding: 1rem 0;
+  font-size: 0.8rem;
+  transition: opacity 0.33s;
+}
+textarea, input, button {
+  line-height: 1rem;
+  border: 0;
+  outline: none;
+  font-family: inherit;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+textarea, input {
+  color: yellow;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='24'><rect fill='rgb(225, 225, 0)' x='0' y='23' width='10' height='1'/></svg>");
+}
+textarea {
+ width: 100%;
+ height: 8rem;
+ resize: none;
+}
+input {
+ width: 50%;
+ margin-bottom: 1rem;
+}
+input[type=text]:invalid, input [type=email]:invalid {
+    box-shadow: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='24'><rect fill='rgba(225, 225, 0)' x='0' y='23' width='10' height='1'/></svg>");
+  }
+button {
+ padding: 0.5rem 1rem;
+ border-radius: 0.25rem;
+ background-color: rgba(33,158,188);
+ color: white;
+ font-size: 1rem;
+ transition: background-color 0.2s;
+}
+button:hover,button :focus {
+    outline: none;
+    background-color: rgba(78, 94, 114, 1);
+  }
+input[type=text]:focus,
+input[type=email]:focus,
+textarea:focus {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='24'><rect fill='rgba(225, 225, 0)' x='0' y='23' width='10' height='1'/></svg>");
+  outline: none;
+}
+.wrapper {
+  width: 35rem;
+  background-color: white;
+}
+
+@media only screen and (max-width:600px) {
+  /* For tablets: */
+  .wrapper {
+    width: 80%;
+    padding: 0;
+  }
+  .wrapper {
+    width: 100%;
+  }
+}
+@media only screen and (max-width:300px) {
+  /* For mobile phones: */
+  .wrapper {
+    width: 100%;
+  }
+}
+
+.letter {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 30rem;
+  margin: auto;
+  perspective: 60rem;
+}
+.side {
+  height: 12rem;
+  background-color: #bc3f21;
+  outline: 1px solid transparent;
+}
+.side:nth-of-type(1) {
+    padding: 2rem 2rem 0;
+    border-radius: 1rem 1rem 0 0;
+    box-shadow: inset 0 0.75rem 2rem rgba(188,63,33);
+  }
+.side.side:nth-of-type(2) {
+    padding: 2rem;
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.05), inset 0 -0.57rem 2rem rgba(188,63,33);
+    text-align: right;
+  }
+.envelope {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: auto;
+}
+.envelope.front {
+  width: 10rem;
+  height: 6rem;
+  border-radius: 0 0 1rem 1rem;
+  overflow: hidden;
+  z-index: 9999;
+  opacity: 0;
+}
+.envelope.front::before, .envelope.front::after {
+  position: absolute;
+  display: block;
+  width: 12rem;
+  height: 6rem;
+  background-color: yellow;
+  transform: rotate(30deg);
+  transform-origin: 0 0;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  content: '';
+}
+.envelope.front::after{
+  right: 0;
+  transform: rotate(-30deg);
+  transform-origin: 100% 0;
+}
+.envelope.back {
+  top: -4rem;
+  width: 10rem;
+  height: 10rem;
+  overflow: hidden;
+  z-index: -9998;
+  opacity: 0;
+  transform: translateY(-6rem);
+}
+.envelope.back::before {
+    display: block;
+    width: 10rem;
+    height: 10rem;
+    background-color: yellow;
+    border-radius: 1rem;
+    content: '';
+    transform: scaleY(0.6) rotate(45deg)
+  }
+.result-message {
+  opacity: 0;
+  transition: all 0.3s 2s;
+  transform: translateY(9rem);
+  z-index: -9999;
+}
+.sent .letter {
+    -webkit-animation: scaleLetter 1s forwards ease-in /*,
+               pushLetter 0.5s 1.33s forwards ease-out*/ ;
+            animation: scaleLetter 1s forwards ease-in /*,
+               pushLetter 0.5s 1.33s forwards ease-out*/ ;
+  }
+.sent .side:nth-of-type(1) {
+    transform-origin: 0 100%;
+    -webkit-animation: closeLetter 0.66s forwards ease-in;
+            animation: closeLetter 0.66s forwards ease-in;
+  }
+.sent .side:nth-of-type(1) h1, .sent .side:nth-of-type(1) textarea {
+    -webkit-animation: fadeOutText 0.66s forwards linear;
+            animation: fadeOutText 0.66s forwards linear;
+  }
+.sent button {
+    background-color: rgba(78, 94, 114, 0.2);
+  }
+.sent .envelope {
+    -webkit-animation: fadeInEnvelope 0.5s 1.33s forwards ease-out;
+            animation: fadeInEnvelope 0.5s 1.33s forwards ease-out;
+  }
+.sent .result-message {
+    opacity: 1;
+    transform: translateY(12rem);
+  }
+.sent small {
+    opacity: 0;
+  }
+.centered {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 1rem auto;
+}
+@-webkit-keyframes closeLetter {
+   50% {transform: rotateX(-90deg);}
+   100% {transform: rotateX(-180deg);}
+}
+@keyframes closeLetter {
+   50% {transform: rotateX(-90deg);}
+   100% {transform: rotateX(-180deg);}
+}
+@-webkit-keyframes fadeOutText {
+   49% {opacity: 1;}
+   50% {opacity: 0;}
+   100% {opacity: 0;}
+}
+@keyframes fadeOutText {
+   49% {opacity: 1;}
+   50% {opacity: 0;}
+   100% {opacity: 0;}
+}
+@-webkit-keyframes fadeInEnvelope {
+  0% {opacity: 0; transform: translateY(8rem);}
+  /*90% {opacity: 1; transform: translateY(4rem);}*/
+  100% {opacity: 1; transform: translateY(4.5rem);}
+}
+@keyframes fadeInEnvelope {
+  0% {opacity: 0; transform: translateY(8rem);}
+  /*90% {opacity: 1; transform: translateY(4rem);}*/
+  100% {opacity: 1; transform: translateY(4.5rem);}
+}
+@-webkit-keyframes scaleLetter {
+  66% {transform: translateY(-8rem) scale(0.5, 0.5);}
+  75% {transform: translateY(-8rem) scale(0.5, 0.5);}
+  90% {transform: translateY(-8rem) scale(0.3, 0.5);}
+  97% {transform: translateY(-8rem) scale(0.33, 0.5);}
+  100%{transform: translateY(-8rem) scale(0.3, 0.5);}
+}
+@keyframes scaleLetter {
+  66% {transform: translateY(-8rem) scale(0.5, 0.5);}
+  75% {transform: translateY(-8rem) scale(0.5, 0.5);}
+  90% {transform: translateY(-8rem) scale(0.3, 0.5);}
+  97% {transform: translateY(-8rem) scale(0.33, 0.5);}
+  100%{transform: translateY(-8rem) scale(0.3, 0.5);}
+}
+
+/*
+@keyframes pushLetter {
+  0% {transform: translateY(-8rem) scale(0.3, 0.5);}
+  50% {transform: translateY(-8rem) scale(0.3, 0.5);}
+  90% {transform: translateY(-8.5rem) scale(0.3, 0.5);}
+  100% {transform: translateY(-8rem) scale(0.3, 0.5);}
+}
+*/
+
+/* Nav */
+    @charset "UTF-8";
+.navigation {
+  height: 70px;
+  background: #bc3f21;
+}
+
+.brand {
+  position: absolute;
+  padding-left: 20px;
+  float: left;
+  line-height: 70px;
+  text-transform: uppercase;
+  font-size: 1.4em;
+}
+.brand a,
+.brand a:visited {
+  color: yellow;
+  text-decoration: none;
+}
+
+.nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+nav {
+  float: right;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  float: left;
+  position: relative;
+}
+nav ul li a,
+nav ul li a:visited {
+  display: block;
+  padding: 0 20px;
+  line-height: 70px;
+  background: #219ebc;
+  color: black;
+  text-decoration: none;
+}
+nav ul li a:hover,
+nav ul li a:visited:hover {
+  background: #bc3f21;
+  color: yellow;
+}
+nav ul li a:not(:only-child):after,
+nav ul li a:visited:not(:only-child):after {
+  padding-left: 4px;
+  content: " ▾";
+}
+nav ul li ul li {
+  min-width: 190px;
+}
+nav ul li ul li a {
+  padding: 15px;
+  line-height: 20px;
+}
+
+.nav-dropdown {
+  position: absolute;
+  display: none;
+  z-index: 1;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile navigation */
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #219ebc;
+  
+  height: 70px;
+  width: 70px;
+}
+
+@media only screen and (max-width: 798px) {
+  .nav-mobile {
+    display: block;
+  }
+
+  nav {
+    width: 100%;
+    padding: 70px 0 15px;
+  }
+  nav ul {
+    display: none;
+  }
+  nav ul li {
+    float: none;
+  }
+  nav ul li a {
+    padding: 15px;
+    line-height: 20px;
+  }
+  nav ul li ul li a {
+    padding-left: 30px;
+  }
+
+  .nav-dropdown {
+    position: static;
+  }
+}
+@media screen and (min-width: 799px) {
+  .nav-list {
+    display: block !important;
+  }
+}
+#nav-toggle {
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+}
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: #bc3f21;
+  position: absolute;
+  display: block;
+  content: "";
+  transition: all 300ms ease-in-out;
+}
+#nav-toggle span:before {
+  top: -10px;
+}
+#nav-toggle span:after {
+  bottom: -10px;
+}
+#nav-toggle.active span {
+  background-color: transparent;
+}
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+  top: 0;
+}
+#nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+  transform: rotate(-45deg);
+}
+
+article {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+</style>
+
+</head>
+<body>
+    
+<!-- Nav -->
+<section class="navigation">
+  <div class="nav-container">
+    <div class="brand">
+      <a href="default.html">Home</a>
+    </div>
+    <nav>
+      <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+      <ul class="nav-list">
+        <li>
+          <a href="#" style="background: #bc3f21;
+  color: yellow; text-align: left" >Education</a>
+          <ul class="nav-dropdown">
+            <li>
+              <a href="/education.html" style="text-align: left">High School</a>
+            </li>
+            <li>
+              <a href="/college.html" style="text-align: left">College</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" style="background: #bc3f21;
+  color: yellow; text-align: left">Hobbies</a>
+          <ul class="nav-dropdown">
+            <li>
+              <a href="/outdoors.html" style="text-align: left">Outdoors</a>
+            </li>
+            <li>
+              <a href="/entertainment.html" style="text-align: left">Entertainment</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/contact.html" style="background: #bc3f21;
+  color: yellow; text-align: left" >Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <br>
+    <br>
+      <br>
+       <br>
+      
+  
+  
+    
+    <h2 style="color: #023047;">Contact Me</h2>
+<!-- partial:index.partial.html -->
+<div class="wrapper centered" style="z-index: -1;">
+  <article class="letter">
+    <div class="side">
+      <p>
+        <textarea placeholder="Your message"></textarea>
+      </p>
+    </div>
+    <div class="side">
+      <p>
+        <input type="text" placeholder="Your name" style="text-decoration: underline; ">
+      </p>
+      <p>
+        <input type="email" placeholder="Your email" style="text-decoration: underline;">
+      </p>
+      <p>
+        <button id="sendLetter">Send</button>
+      </p>
+    </div>
+  </article>
+  <div class="envelope front"></div>
+  
+  <div class="envelope back"></div>
+  
+</div>
+<p class="result-message centered">Message submitted. I'll respond ASAP.</p>
+<!-- partial -->
+<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+  <script  src="./script.js"></script>
+  <script>
+      function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
+function addClass() {
+  document.body.classList.add("sent");
+}
+
+sendLetter.addEventListener("click", addClass);
+
+ 
+      (function($) { // Begin jQuery
+  $(function() { // DOM ready
+    // If a link has a dropdown, add sub menu toggle.
+    $('nav ul li a:not(:only-child)').click(function(e) {
+      $(this).siblings('.nav-dropdown').toggle();
+      // Close one dropdown when selecting another
+      $('.nav-dropdown').not($(this).siblings()).hide();
+      e.stopPropagation();
+    });
+    // Clicking away from dropdown will remove the dropdown class
+    $('html').click(function() {
+      $('.nav-dropdown').hide();
+    });
+    // Toggle open and close nav styles on click
+    $('#nav-toggle').click(function() {
+      $('nav ul').slideToggle();
+    });
+    // Hamburger to X toggle
+    $('#nav-toggle').on('click', function() {
+      this.classList.toggle('active');
+    });
+  }); // end DOM ready
+})(jQuery); // end jQuery
+
+  </script>
+</section>
+</body>
+</html>

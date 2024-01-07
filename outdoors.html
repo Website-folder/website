@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Thomas Cavanagh</title>
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+/* Nav */
+    @charset "UTF-8";
+.navigation {
+  height: 70px;
+  width: 100%;
+  background: #bc3f21;
+}
+
+.brand {
+  position: absolute;
+  padding-left: 20px;
+  float: left;
+  line-height: 70px;
+  text-transform: uppercase;
+  font-size: 1.4em;
+  width: 100%;
+}
+.brand a,
+.brand a:visited {
+  color: yellow;
+  text-decoration: none;
+  width: 100%;
+}
+
+.nav-container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+nav {
+  float: right;
+  
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  float: left;
+  position: relative;
+}
+nav ul li a,
+nav ul li a:visited {
+  display: block;
+  padding: 0 20px;
+  line-height: 70px;
+  background: #219ebc;
+  color: black;
+  text-decoration: none;
+}
+nav ul li a:hover,
+nav ul li a:visited:hover {
+  background: #bc3f21;
+  color: yellow;
+}
+nav ul li a:not(:only-child):after,
+nav ul li a:visited:not(:only-child):after {
+  padding-left: 4px;
+  content: " ▾";
+}
+nav ul li ul li {
+  min-width: 190px;
+}
+nav ul li ul li a {
+  padding: 15px;
+  line-height: 20px;
+}
+
+.nav-dropdown {
+  position: absolute;
+  display: none;
+  z-index: 1;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile navigation */
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #219ebc;
+  height: 70px;
+  width: 70px;
+}
+
+@media only screen and (max-width: 798px) {
+  .nav-mobile {
+    display: block;
+     
+  }
+
+  nav {
+    width: 100%;
+    padding: 70px 0 15px;
+  }
+  nav ul {
+    display: none;
+  }
+  nav ul li {
+    float: none;
+  }
+  nav ul li a {
+    padding: 15px;
+    line-height: 20px;
+  }
+  nav ul li ul li a {
+    padding-left: 30px;
+  }
+
+  .nav-dropdown {
+    position: static;
+  }
+}
+@media screen and (min-width: 799px) {
+  .nav-list {
+    display: block !important;
+  }
+}
+#nav-toggle {
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+}
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: #bc3f21;
+  position: absolute;
+  display: block;
+  content: "";
+  transition: all 300ms ease-in-out;
+}
+#nav-toggle span:before {
+  top: -10px;
+}
+#nav-toggle span:after {
+  bottom: -10px;
+}
+#nav-toggle.active span {
+  background-color: transparent;
+}
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+  top: 0;
+}
+#nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+  transform: rotate(-45deg);
+}
+
+article {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+
+
+    /* === This project is still under development and will probably contain bugs == */
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800');
+  * { font-family: Arial, Helvetica, sans-serif;}
+  html{-moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased;}
+  body{padding: 0 40px; margin: 0 auto; 
+  font-family: Arial, Helvetica, sans-serif;
+   background: #219ebc;}
+  h2{
+    width:100%; 
+    font-size:30px; 
+    text-align: center; 
+    margin-top:50px;
+     color: #023047;
+  }
+   h3{padding:0; margin:0;}
+
+
+  .wrap {
+    color: #000;
+    font-size: 14px;
+    line-height: 21px;
+    max-width: 1840px;
+    padding: 0 40px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .btn{
+    min-width: 150px;
+    margin-bottom: 10px;
+    color: #fff;
+    display: inline-block;
+    font-weight: 600;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.4;
+    transition: background .25s ease;
+    border: none;
+    white-space: normal;
+    vertical-align: middle;
+    overflow: visible;
+    cursor: pointer;
+     font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    background-color: #beac95;
+  }
+  .btn-blauw{background-color: #1C69D4; color: white;}
+  .btn-btn-oranje {background-color: #ed9300; color: white;}  
+  .timeline-wrap{position:relative; padding:0 50px;}
+  .timeline{
+    overflow-x:auto;
+    -webkit-overflow-scrolling: touch;
+    background-repeat: repeat-x;
+    background-size: 10px 2px;
+    background-position: center top 60%;
+    background-image: -webkit-gradient(linear,left top,right top,color-stop(66%,#000),color-stop(0,transparent));
+    background-image: linear-gradient(90deg,#000 66%,transparent 0);
+    padding: 50px 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 100%;
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%;
+    flex-flow: row nowrap;
+    transition: height .2s ease-out;
+    transition: height .2s ease-out;
+    transition: height .2s ease-out;
+  }
+  .timeline-title, .timeline-content-title{font-weight:600;}
+  .timeline-item{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:flex;
+    justify-content: space-between;
+    flex-flow:wrap;
+    -webkit-transition: max-width .2s,-webkit-transform .4s ease-out;
+    transition: max-width .2s,-webkit-transform .4s ease-out;
+    transition: max-width .2s,transform .4s ease-out;
+    transition: max-width .2s,transform .4s ease-out,-webkit-transform .4s ease-out;
+    cursor: pointer;
+    margin:0 50px; 
+    height:auto;
+
+  }
+  .i-is-active.timeline-item{cursor:default;}
+  .timeline-content{width:100%;}
+  .p-timeline-item:hover{transform:scale(1.1); transition:transform .3s ease;}
+  .bmw:hover time, .bmw.i-is-active time, .timeline-content-title.bmw{color:yellow;}
+  .mini:hover time, .mini.i-is-active time, .timeline-content-title.mini{color:yellow;}
+  .bmw:hover time, .mini:hover time, .bmw time, .mini time{transition:color .3s ease;}
+  .p-timeline-item.i-is-active{cursor: default;}
+  .bmw:hover .p-timeline-block{background-color:yellow;}
+  .mini:hover .p-timeline-block{background-color:yellow;}
+  .bmw .p-timeline-block, .mini .p-timeline-block, .mini:hover .p-timeline-block, .bmw:hover .p-timeline-block {transition:background-color 1s ease;}
+  .p-timeline-date, .p-timeline-carmodel, .p-timeline-block{width:100%;}
+  .p-timeline-date{font-weight:600;font-size:20px;}
+  .p-timeline-carmodel{margin-top: 5px;margin-bottom: 10px;}
+  .p-timeline-block {
+    min-width:55px;
+    min-height:55px;
+    max-width:55px;
+    max-height:55px;
+    border: solid 0px black;
+    border-radius:50%;
+    background-color:yellow;
+    position:relative;
+    top:3px;
+    left:48px;
+    margin-bottom:20px;
+  }
+
+  .p-timeline-item{
+      color: yellow;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap:wrap;
+    min-width:150px;
+    max-width:150px;
+    position: relative;
+    text-align:center;
+    transition:color .3s ease-in-out;
+    transition:transform .3s ease;
+  }
+  .p-timeline-content{
+    width:98%;
+    height:0;
+    position:absolute;
+    overflow:hidden;
+    visibility:hidden;
+    opacity: 0;
+    transform:translateX(-1000px);
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    padding: 50px 20px 20px 20px;
+  }
+  .i-is-active.p-timeline-content{
+    color: yellow;
+    background: #bc3f21;
+    height:auto;
+    padding: 50px 20px 20px 20px;
+    float:left;
+    width:98%;
+    text-align:left;
+    position:relative;
+    visibility: visible;
+    opacity:1;
+    transform:translateX(0px);
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+  }
+  .i-is-active.p-timeline-content h3, .i-is-active.p-timeline-content time{width:100%;}
+  .i-is-active.p-timeline-content .timeline-content-card{width:40%;}
+  .i-is-active.p-timeline-content .timeline-content-image{width:59%;}
+  .i-is-active.p-timeline-content .timeline-content-card, .i-is-active.p-timeline-content .timeline-content-image{float:left;}
+  .i-is-active.p-timeline-content .timeline-content-image:after{clear:both;}
+  .i-is-active.bmw .p-timeline-block{background-color:yellow;} 
+  .i-is-active.mini .p-timeline-block{background-color:yellow;} 
+  .i-is-active.p-timeline-item:hover{transform: none;}
+  .i-is-active .p-timeline-item{transform:scale(1.1);}
+  .bmw.i-is-active.p-timeline-content h3 {color:yellow;}
+  .mini.i-is-active.p-timeline-content h3 {color:yellow;}
+  .timeline-content-image img{width:100%; height:auto; max-width:100%;}
+  .p-timeline-content time {font-size: 15px; line-height: 40px; font-style: italic; }
+  .p-timeline-content p {font-size:14px; line-height:21px; padding-right:30px; font-weight:300;}
+  .timeline-content-title{font-size:28px;}
+  .close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+.close:hover {opacity: 1;}
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 25px;
+  width: 2px;
+  background-color: #333;
+}
+.close:before {transform: rotate(45deg);}
+.close:after {transform: rotate(-45deg);}
+
+/*Custom scrollbar styling*/
+.timeline::-webkit-scrollbar {height:8px;}
+.timeline::-webkit-scrollbar-track {box-shadow: inset 0 0 5px lightgrey; border-radius: 10px;} /* Track */
+.timeline::-webkit-scrollbar-thumb {background: #beac95; border-radius: 10px;} /* Handle */
+
+/*  ========== Media Queries ========== */
+
+/* laptop resolutions*/
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) { 
+  .timeline{background-position: center top 60%;}
+  .i-is-active.p-timeline-content .timeline-content-card{width:48%;}
+  .i-is-active.p-timeline-content .timeline-content-image{width:50%;}
+}
+/*Tablet - Landscape*/
+@media screen and (max-width: 1199px){
+  .timeline-content-title{font-size: 1.7em;}
+  .p-timeline-content time{font-size:1em;}
+}
+/*Tablet - Portrait*/
+@media screen and (max-width: 1020px){
+  .p-timeline-carmodel{margin:0;}
+   .wrap{padding:0 40px;} 
+  .timeline-wrap{padding:0;}
+  .p-timeline-content{display:flex;flex-flow: column;}
+  .i-is-active.p-timeline-content .timeline-content-card, .i-is-active.p-timeline-content .timeline-content-card, .i-is-active.p-timeline-content .timeline-content-image{width:100%;}
+  .i-is-active.p-timeline-content .timeline-content-image{padding:0; order:0; margin-bottom:20px;}
+  .i-is-active.p-timeline-content .timeline-content-card{padding:0; order:1;}
+  .i-is-active.p-timeline-content{padding-left:0; padding-right:0;}
+  .timeline-content-button{width:100%; padding:10px 0px;} 
+  
+}
+/* Mobile devices */
+@media screen and (max-width: 768px){
+  body{padding:0;} 
+  .timeline{background-position: center top 55%;}
+  .timeline-item{margin:0 10px;}
+  .p-timeline-block{min-width: 45px; min-height: 45px; max-width: 45px; max-height: 45px;}
+  .p-timeline-date{font-size:16px;}
+  .p-timeline-carmodel{margin:0; line-height:20px; font-size: 13px;}
+  .p-timeline-content time{line-height:20px;}
+  .p-timeline-content p{font-size:0.9em; padding-right:0px;}
+  .timeline-content-title{font-size:1.5em; line-height:1.3em;}
+  .close{right:0px;}
+  .timeline-title{line-height:1em; font-size:1.5em;}
+  .timeline::-webkit-scrollbar {height:4px;}
+}
+    
+    .responsive {
+  width: 100%;
+  height: auto;
+}
+</style>
+
+</head>
+<body>
+  <!-- Nav -->
+<section class="navigation">
+  <div class="nav-container" style="width: 100%">
+    <div class="brand">
+      <a href="default.html">Home</a>
+    </div>
+    <nav>
+      <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+      <ul class="nav-list">
+        <li>
+          <a href="#" style="background: #bc3f21;
+  color: yellow; text-align: left" >Education</a>
+          <ul class="nav-dropdown">
+            <li>
+              <a href="/education.html">High School</a>
+            </li>
+            <li>
+              <a href="/college.html" >College</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" style="background: #bc3f21;
+  color: yellow;">Hobbies</a>
+          <ul class="nav-dropdown">
+            <li>
+              <a href="/outdoors.html" >Outdoors</a>
+            </li>
+            <li>
+              <a href="/entertainment.html" >Entertainment</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/contact.html" style="background: #bc3f21;
+  color: yellow;" >Contact</a>
+        </li>
+      </ul>
+    </nav>
+  
+  
+  <br>
+    <br>
+      <br>
+      <br>
+    </div>
+    
+    
+<!-- partial:index.partial.html -->
+<!-- == classnames were based on context of project == -->
+<div class="wrap">
+  <div class="timeline-wrap">
+    <h2 class="timeline-title">Traveling</h2>
+    <ul class="timeline">
+      <li class="timeline-item bmw" >
+        <div class="p-timeline-item" >
+          <time class="p-timeline-date" datetime="2019-05-01">May 2014</time>
+          <span class="p-timeline-carmodel" data-car="1">South Africa</span>
+          <div class="p-timeline-block"></div>
+        </div>
+      </li>
+      <li class="timeline-item mini">
+        <div class="p-timeline-item" >
+          <time class="p-timeline-date" datetime="2019-06-01">May 2018</time>
+          <span class="p-timeline-carmodel" data-car="2">Hawaii</span>
+          <div class="p-timeline-block"></div>
+        </div>
+      </li>
+      <li class="timeline-item mini" >
+        <div class="p-timeline-item" >
+          <time class="p-timeline-date" datetime="2019-07-01">June 2021</time>
+          <span class="p-timeline-carmodel" data-car="3">California</span>
+          <div class="p-timeline-block"></div>
+        </div>
+      </li>
+      <li class="timeline-item bmw">
+        <div class="p-timeline-item" >
+          <time class="p-timeline-date" datetime="2019-08-01">July 2021</time>
+          <span class="p-timeline-carmodel" data-car="4">California 2</span>
+          <div class="p-timeline-block"></div>
+        </div>
+      </li>
+      <li class="timeline-item bmw" >
+        <div class="p-timeline-item" >
+          <time class="p-timeline-date" datetime="2019-09-01">December 2021</time>
+          <span class="p-timeline-carmodel" data-car="5">Portugal</span>
+          <div class="p-timeline-block"></div>
+        </div>
+      </li>
+      <li class="timeline-item bmw">
+        <div class="p-timeline-item" >
+          <time class="p-timeline-date" datetime="2019-10-01">January 2022</time>
+          <span class="p-timeline-carmodel" data-car="6">Spain</span>
+          <div class="p-timeline-block"></div>
+        </div>
+      </li>
+      <li class="timeline-item bmw" >
+        <div class="p-timeline-item" >
+          <time class="p-timeline-date" datetime="2019-11-01">March 2022</time>
+          <span class="p-timeline-carmodel" data-car="7">Sedona</span>
+          <div class="p-timeline-block"></div>
+        </div>
+      </li>
+      <li class="timeline-item mini">
+        <div class="p-timeline-item" >
+          <time class="p-timeline-date" datetime="2019-12-01">May 2022</time>
+          <span class="p-timeline-carmodel" data-car="8">Alaska</span>
+          <div class="p-timeline-block"></div>
+        </div>
+      </li>
+      <li class="timeline-item mini">
+        <div class="p-timeline-item" >
+          <time class="p-timeline-date" datetime="2019-12-01">August 2022</time>
+          <span class="p-timeline-carmodel" data-car="9">Nigara Falls</span>
+          <div class="p-timeline-block"></div>
+        </div>
+      </li>
+      
+      <li class="timeline-item mini">
+        <div class="p-timeline-item" >
+          <time class="p-timeline-date" datetime="2019-12-01">October 2022</time>
+          <span class="p-timeline-carmodel" data-car="10">Syracuse, New York</span>
+          <div class="p-timeline-block"></div>
+        </div>
+      </li>
+    </ul>
+    <div class="timeline-content">
+
+       <div class="p-timeline-content" data-car="1">
+        <div class="timeline-content-card">
+          <h3 class="timeline-content-title bmw">South Africa</h3>
+          <time class="timeline-content-date" datetime="2019-05-01"></time>
+          <p>This trip was for my eldest sister. She graduated high school in 2014. It was to celebrate her graduation. We stayed for about 3 weeks traveling all around. We got a bus for the first week with a fun group of people where we did all sorts of activities such as zip lining, sand boarding and exploring caves. We took a leisurely pace for the last part with doing Airbnbs. We occupied ourselves with other youthful activities such as Table Mountain. </p>
+          <div class="close" data-type-close></div>
+        </div>
+        <div class="timeline-content-image">
+        <img src="/africa/board.jpg" style="width: 255px; height: 340px;">
+        </div>
+      </div>
+       <div class="p-timeline-content" data-car="2">
+        <div class="timeline-content-card">
+          <h3 class="timeline-content-title mini">Hawaii</h3>
+          <time class="timeline-content-date" datetime="2019-06-01"></time>
+          <p>This trip was for my high school graduation. This was my second time coming here after my youngest sister's high school graduation. We stayed for about 3 weeks with visiting 3 different islands: Kauai, The Big Island and Maui. We did all sorts of outside activities from doing a boat ride that went to an active volcano to a helicopter tour. The best part was the boat tour as you got to see actual lava. The steam surrounding the boat was fun to experience as well. </p>
+          <div class="close" data-type-close></div>
+        </div>
+        <div class="timeline-content-image">
+          <img src="/hawaii/steam1.jpg" alt="placeholder" style="width: 180px; height: 284px" class="responsive"/>
+        </div>
+      </div>
+      <div class="p-timeline-content" data-car="3">
+        <div class="timeline-content-card">
+          <h3 class="timeline-content-title mini">California</h3>
+          <time class="timeline-content-date" datetime="2019-07-01"></time>
+          <p> My mother and I visited my eldest sister a few weeks before her wedding. It was to make sure everything was in place for her special day. We explored several parks in the area. My best friend goes to college here. We were able to connect up with him on the one of the days. Our day was spent hiking up a steep, rockey mountain catching up on what we have been doing. </p>
+          <div class="close" data-type-close></div>
+        </div>
+        <div class="timeline-content-image">
+          <img src="california/bridge.jpg" alt="placeholder"/>
+        </div>
+      </div>
+       <div class="p-timeline-content" data-car="4">
+        <div class="timeline-content-card">
+          <h3 class="timeline-content-title bmw">California</h3>
+          <time class="timeline-content-date" datetime="2019-08-01"></time>
+          <p> A few weeks later, it was time for my sister's special day. She decided to have a small wedding with close family. She got married on a Friday but before then, we continued exploring California. We would go to the bay and continued our hiking sessions. One hike was very steep going down at the end of the trail. It's surprising (but a blessing) that no one fell with how steep it was. </p>
+          <div class="close" data-type-close></div>
+        </div>
+        <div class="timeline-content-image">
+          <img src="wedding/wedding.jpg" alt="placeholder"/>
+        </div>
+      </div>
+      <div class="p-timeline-content" data-car="5">
+        <div class="timeline-content-card">
+          <h3 class="timeline-content-title bmw">Portugal</h3>
+          <time class="timeline-content-date" datetime="2019-09-01"></time>
+          <p> A few months later, we took a family vacation instead of doing the usual. Our usual for Christmas is visiting our family in Rochester but we did that in advance because we wanted to do something different for the holidays. We decided to go to two different countries: the other being Spain. Our family was sadly not able to meet up together due to the overarching concerns about COVID but we were able to split it up between the countries. Portugal was easy due to staying in one spot. We mainly explored the capital and a few churches. We also took a cooking class which was unique but fun.  </p>
+          <div class="close" data-type-close></div>
+        </div>
+        <div class="timeline-content-image">
+          <img src="/portugal/mansion2.jpg" alt="placeholder"/>
+        </div>
+      </div>
+       <div class="p-timeline-content" data-car="6">
+        <div class="timeline-content-card">
+          <h3 class="timeline-content-title bmw">Spain</h3>
+          <time class="timeline-content-date" datetime="2019-10-01"></time>
+          <p> When the new year came, we went to Spain. My eldest and her husband had to go back to work but my youngest and her fiancee were able to join for this portion. This was an interesting week. We did a city each day which was about 2-3 hours away. We did all of southern Spain with exploring the cities, churches and castles.  </p>
+          <div class="close" data-type-close></div>
+        </div>
+        <div class="timeline-content-image">
+          <img src="/spain/castle.jpg" alt="placeholder"/>
+        </div>
+      </div>
+      <div class="p-timeline-content" data-car="7">
+        <div class="timeline-content-card">
+          <h3 class="timeline-content-title bmw">Sedona</h3>
+          <time class="timeline-content-date" datetime="2019-11-01"></time>
+          <p> This was my final spring break of college. Arizona is hot in the summer, but in winter, it's amazing. We mainly hiked all around the Sedona area like Cathedral Rock. It was very convient with the Airbnb we got. The trails would be about 5-10 minutes away. We would get up early in the morning and hike for about 4-5 hours before going back to relax. We did some other activities such as a Pink Jeep Tour, which was a blast with the road, but it was mainly hiking. </p>
+          <div class="close" data-type-close></div>
+        </div>
+        <div class="timeline-content-image">
+          <img src="/sedona/hike.jpg" alt="placeholder"/>
+        </div>
+      </div>
+       <div class="p-timeline-content" data-car="8">
+        <div class="timeline-content-card">
+          <h3 class="timeline-content-title mini">Alaska</h3>
+          <time class="timeline-content-date" datetime="2019-12-01"></time>
+          <p> This was for my college graduation. We went all around Alaska. The time limit we had was 3 weeks. With the amount of cities we wanted to do, we gave ourselves about 3 days per city. Our first destination after a long flight was Ancorage. We spent the night in a bed and breakfast to recharge. Then we went to several different places such as Fairbanks and Whittier. During those places, we would experience the breathtaking glaciers. We would also hike on the actual glacier along with the deep, snowy trails. Stranger Things 4 came out during this time so we gave ourselves a relax day in Fairbanks. It lined up perfectly due to being Memorial day. </p>
+          <div class="close" data-type-close></div>
+        </div>
+        <div class="timeline-content-image">
+          <video width="400" controls>
+                <source src="/alaska/boat.mp4" type="video/mp4">
+                <source src="/alaska/boat.mp4" type="video/ogg">
+                Your browser does not support HTML video.
+            </video>
+        </div>
+      </div>
+      
+        <div class="p-timeline-content" data-car="9">
+        <div class="timeline-content-card">
+          <h3 class="timeline-content-title mini">Nigara Falls</h3>
+          <time class="timeline-content-date" datetime="2019-12-01"></time>
+          <p> I have been here before but that was back in middle school. This recent trip was to visit my youngest sister and help prepare for her wedding. We did not do many hiking trails like for my oldest, but we did historic places instead when we were preparing for her wedding. Nigara Falls is always a magnificant place to experience with its structure. The activities such as Maid of the Mist and Cave of the Winds are always fun. One thing that was new was going over to the Canada side. Unfortunately, the view was not as spectacular as it should be due to the cloudy day but that just gives a reason to go back for next time. </p>
+          <div class="close" data-type-close></div>
+        </div>
+        <div class="timeline-content-image">
+          <img src="falls/falls.jpg" alt="placeholder"/>
+        </div>
+      </div>
+      
+      
+        <div class="p-timeline-content" data-car="10">
+        <div class="timeline-content-card">
+          <h3 class="timeline-content-title mini">Syracuse, New York</h3>
+          <time class="timeline-content-date" datetime="2019-12-01"></time>
+          <p> My youngest sister's wedding came full circle. We lived in Syracuse for a brief period but I do not remember much of it due to being very young at the time. I attended kindergarten here. My sister's wedding was at a church where she got her confirmation name. The church was beautiful and it was very different compared to my oldest sister's. This one included friends and family, both close and cousins. After being a party animal on the dance floor, we went apple picking. The car was loaded with leftovers from the donuts that was served at the wedding to the apples we picked at the farm. </p>
+          <div class="close" data-type-close></div>
+        </div>
+        <div class="timeline-content-image">
+          <img src="/kenzie/kenzie.png" alt="placeholder"/>
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+</div>
+
+
+
+<!-- hiking timeline -->
+<div class="wrap">
+  <div class="timeline-wrap">
+    <h2 class="timeline-title">Hiking</h2>
+    <ul class="timeline">
+      <li class="timeline-item bmw" >
+        <div class="p-timeline-item" >
+          <time class="p-timeline-date" datetime="2019-05-01">May 2014</time>
+          <span class="p-timeline-carmodel" data-car="11">South Africa</span>
+          <div class="p-timeline-block"></div>
+        </div>
+      </li>
+      <li class="timeline-item mini">
+        <div class="p-timeline-item" >
+          <time class="p-timeline-date" datetime="2019-06-01">May 2018</time>
+          <span class="p-timeline-carmodel" data-car="12">Hawaii</span>
+          <div class="p-timeline-block"></div>
+        </div>
+      </li>
+      <li class="timeline-item mini" >
+        <div class="p-timeline-item" >
+          <time class="p-timeline-date" datetime="2019-07-01">June 2021</time>
+          <span class="p-timeline-carmodel" data-car="13">California</span>
+          <div class="p-timeline-block"></div>
+        </div>
+      </li>
+      
+      <li class="timeline-item bmw" >
+        <div class="p-timeline-item" >
+          <time class="p-timeline-date" datetime="2019-09-01">December 2021</time>
+          <span class="p-timeline-carmodel" data-car="15">Portugal</span>
+          <div class="p-timeline-block"></div>
+        </div>
+      </li>
+      <li class="timeline-item bmw">
+        <div class="p-timeline-item" >
+          <time class="p-timeline-date" datetime="2019-10-01">January 2022</time>
+          <span class="p-timeline-carmodel" data-car="16">Spain</span>
+          <div class="p-timeline-block"></div>
+        </div>
+      </li>
+      <li class="timeline-item bmw" >
+        <div class="p-timeline-item" >
+          <time class="p-timeline-date" datetime="2019-11-01">March 2022</time>
+          <span class="p-timeline-carmodel" data-car="17">Sedona</span>
+          <div class="p-timeline-block"></div>
+        </div>
+      </li>
+      <li class="timeline-item mini">
+        <div class="p-timeline-item" >
+          <time class="p-timeline-date" datetime="2019-12-01">May 2022</time>
+          <span class="p-timeline-carmodel" data-car="18">Alaska</span>
+          <div class="p-timeline-block"></div>
+        </div>
+      </li>
+      <li class="timeline-item mini">
+        <div class="p-timeline-item" >
+          <time class="p-timeline-date" datetime="2019-12-01">August 2022</time>
+          <span class="p-timeline-carmodel" data-car="19">Nigara Falls</span>
+          <div class="p-timeline-block"></div>
+        </div>
+      </li>
+      
+      <li class="timeline-item mini">
+        <div class="p-timeline-item" >
+          <time class="p-timeline-date" datetime="2019-12-01">November 2022</time>
+          <span class="p-timeline-carmodel" data-car="20">Zion and Joshua Tree National Park</span>
+          <div class="p-timeline-block"></div>
+        </div>
+      </li>
+    </ul>
+    
+    
+    <div class="timeline-content">
+
+       <div class="p-timeline-content" data-car="11" style="text-align: center; " >
+        <div class="timeline-content-card">
+        </div>
+        <div class="timeline-content-image" style="text-align: center; ">
+        
+        <img src="/africa/tommy.jpg">
+       
+        <img src="/africa/tom1.jpg" style="text-align: center; ">
+        <img src="/africa/elephant.jpg" >
+        
+        </div>
+        
+        
+      </div>
+       <div class="p-timeline-content" data-car="12">
+        <div class="timeline-content-card">
+          <time class="timeline-content-date" datetime="2019-06-01"></time>
+         
+          <div class="close" data-type-close></div>
+        </div>
+        <div class="timeline-content-image">
+          <img src="/hawaii/helocoptor.jpg" alt="placeholder"/>
+          <img src="/hawaii/waterfall.jpg" alt="placeholder" style="width: 180px; height: 284px"/>
+          <img src="/hawaii/lava1.jpg" alt="placeholder" style="width: 180px; height: 284px"/>
+        </div>
+      </div>
+      
+      
+      <div class="p-timeline-content" data-car="13">
+        <div class="timeline-content-card">
+          <time class="timeline-content-date" datetime="2019-07-01"></time>
+          <div class="close" data-type-close></div>
+        </div>
+        <div class="timeline-content-image">
+          <img src="california/hike.jpg" alt="placeholder"/>
+           <img src="california/mountain.jpg" alt="placeholder"/>
+        </div>
+      </div>
+      
+      
+
+      <div class="p-timeline-content" data-car="15">
+        <div class="timeline-content-card">
+          
+          <time class="timeline-content-date" datetime="2019-09-01"></time>
+         
+          <div class="close" data-type-close></div>
+        </div>
+        <div class="timeline-content-image">
+          <img src="/portugal/city.jpg" alt="placeholder"/>
+          <img src="/portugal/family.jpg" alt="placeholder"/>
+          
+        </div>
+      </div>
+      
+      
+       <div class="p-timeline-content" data-car="16">
+        <div class="timeline-content-card">
+          
+          <time class="timeline-content-date" datetime="2019-10-01"></time>
+          <div class="close" data-type-close></div>
+        </div>
+        <div class="timeline-content-image">
+          <img src="/spain/city.jpg" alt="placeholder"/>
+           <img src="/spain/family.jpg" alt="placeholder"/>
+            <img src="/spain/creepy.jpg" alt="placeholder"/>
+        </div>
+      </div>
+      
+      
+      
+      <div class="p-timeline-content" data-car="17">
+        <div class="timeline-content-card">
+          <time class="timeline-content-date" datetime="2019-11-01"></time>
+          <div class="close" data-type-close></div>
+        </div>
+        <div class="timeline-content-image">
+          <img src="/sedona/tommy.jpg" alt="placeholder"/>
+           <img src="/sedona/rock.jpg" alt="placeholder"/>
+            <img src="/sedona/mountain.jpg" alt="placeholder"/>
+        </div>
+      </div>
+      
+      
+       <div class="p-timeline-content" data-car="18">
+        <div class="timeline-content-card">
+          <time class="timeline-content-date" datetime="2019-12-01"></time>
+          <div class="close" data-type-close></div>
+        </div>
+        <div class="timeline-content-image">
+          <video width="400" controls>
+                <source src="/alaska/glacier.mp4" type="video/mp4">
+                <source src="/alaska/glacier.mp4" type="video/ogg">
+                Your browser does not support HTML video.
+            </video>
+            <img src="/alaska/kayak.jpg" alt="placeholder"/>
+            <video width="400" controls>
+                <source src="/alaska/car.mp4" type="video/mp4">
+                <source src="/alaska/car.mp4" type="video/ogg">
+                Your browser does not support HTML video.
+            </video>
+        </div>
+      </div>
+      
+        <div class="p-timeline-content" data-car="19">
+        <div class="timeline-content-card">
+          <time class="timeline-content-date" datetime="2019-12-01"></time>
+          <div class="close" data-type-close></div>
+        </div>
+        <div class="timeline-content-image">
+          <img src="falls/niagra.jpg" alt="placeholder"/>
+           <img src="falls/falls1.jpg" alt="placeholder"/>
+        </div>
+      </div>
+      
+      
+        <div class="p-timeline-content" data-car="20">
+        <div class="timeline-content-card">
+          <time class="timeline-content-date" datetime="2019-12-01"></time>
+         
+          <div class="close" data-type-close></div>
+        </div>
+        <div class="timeline-content-image">
+          <img src="/zion/water.jpg" style="width: 375px; height: 496.5px;" alt="placeholder"/>
+           <img src="/zion/rock.jpg" style="width: 378px; height: 504px;" alt="placeholder"/>
+            <img src="/zion/snow.jpg" style="width: 512px; height: 384px;" alt="placeholder"/>
+            <img src="/zion/intense.jpg" style="width: 378px; height: 504px;" alt="placeholder"/>
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+</div>
+
+
+
+<!-- tennis timeline -->
+<div class="wrap">
+  <div class="timeline-wrap">
+    <h2 class="timeline-title">Tennis</h2>
+    <ul class="timeline">
+      <li class="timeline-item bmw" >
+        <div class="p-timeline-item" >
+          <time class="p-timeline-date" datetime="2019-05-01">Early life</time>
+          <span class="p-timeline-carmodel" data-car="31"></span>
+          <div class="p-timeline-block"></div>
+        </div>
+      </li>
+      <li class="timeline-item mini">
+        <div class="p-timeline-item" >
+          <time class="p-timeline-date" datetime="2019-06-01">Middle School</time>
+          <span class="p-timeline-carmodel" data-car="32"></span>
+          <div class="p-timeline-block"></div>
+        </div>
+      </li>
+      <li class="timeline-item mini" >
+        <div class="p-timeline-item" >
+          <time class="p-timeline-date" datetime="2019-07-01">High School</time>
+          <span class="p-timeline-carmodel" data-car="33">September 2013</span>
+          <div class="p-timeline-block"></div>
+        </div>
+      </li>
+      <li class="timeline-item bmw">
+        <div class="p-timeline-item" >
+          <time class="p-timeline-date" datetime="2019-08-01">High School</time>
+          <span class="p-timeline-carmodel" data-car="34">March 2015</span>
+          <div class="p-timeline-block"></div>
+        </div>
+      </li>
+      <li class="timeline-item bmw" >
+        <div class="p-timeline-item" >
+          <time class="p-timeline-date" datetime="2019-09-01">High School</time>
+          <span class="p-timeline-carmodel" data-car="35">Graduation</span>
+          <div class="p-timeline-block"></div>
+        </div>
+      </li>
+      <li class="timeline-item bmw">
+        <div class="p-timeline-item" >
+          <time class="p-timeline-date" datetime="2019-10-01">College</time>
+          <span class="p-timeline-carmodel" data-car="36">August 2018</span>
+          <div class="p-timeline-block"></div>
+        </div>
+      </li>
+      <li class="timeline-item bmw" >
+        <div class="p-timeline-item" >
+          <time class="p-timeline-date" datetime="2019-11-01">College</time>
+          <span class="p-timeline-carmodel" data-car="37">2020</span>
+          <div class="p-timeline-block"></div>
+        </div>
+      </li>
+      <li class="timeline-item mini">
+        <div class="p-timeline-item" >
+          <time class="p-timeline-date" datetime="2019-12-01">College</time>
+          <span class="p-timeline-carmodel" data-car="38">March 2022</span>
+          <div class="p-timeline-block"></div>
+        </div>
+      </li>
+     
+      
+      <li class="timeline-item mini">
+        <div class="p-timeline-item" >
+          <time class="p-timeline-date" datetime="2019-12-01">Post College</time>
+          <span class="p-timeline-carmodel" data-car="40">Summer 2022</span>
+          <div class="p-timeline-block"></div>
+        </div>
+      </li>
+    </ul>
+    <div class="timeline-content">
+
+       <div class="p-timeline-content" data-car="31">
+        <div class="timeline-content-card">
+          <h3 class="timeline-content-title bmw">Early life</h3>
+          <time class="timeline-content-date" datetime="2019-05-01"></time>
+          <p>My family is big into sports. My parents would get my sisters and I into several different sports like baseball, basketball and soccer. None of them stuck with me because I was not a fan of running around as a kid. I did not like tennis either with how difficult it was to hit the ball and get a serve in the correct spot on the field.  </p>
+          <div class="close" data-type-close></div>
+        </div>
+        <div class="timeline-content-image">
+        <img src="/africa/board.jpg" style="width: 255px; height: 340px;">
+        </div>
+      </div>
+       <div class="p-timeline-content" data-car="32">
+        <div class="timeline-content-card">
+          <h3 class="timeline-content-title mini">Middle School</h3>
+          <time class="timeline-content-date" datetime="2019-06-01"></time>
+          <p>The activities I did like was dodgeball and surpringly flag football. Tennis was surpringly the one spot that stayed. Dodgeball and flag football were more school events. What made me like tennis was my friends from school were into it as well. That made getting things wrong more bearable. As time went on, I would be able to hit the ball very well and genuinely enjoy tennis for what it was. Sadly, my middle school did not have a tennis team but my high school and I could not wait to graduate middle school once I heard about it. </p>
+          <div class="close" data-type-close></div>
+        </div>
+        <div class="timeline-content-image">
+          <img src="/hawaii/steam1.jpg" alt="placeholder" style="width: 180px; height: 284px" class="responsive"/>
+        </div>
+      </div>
+      <div class="p-timeline-content" data-car="33">
+        <div class="timeline-content-card">
+          <h3 class="timeline-content-title mini">September 2013</h3>
+          <time class="timeline-content-date" datetime="2019-07-01"></time>
+          <p> The moment September 2013 came around, I was ready to sign up for the team. I found out that there two different levels: JV and varsity. Sadly, the boys tennis does not play until spring as the women's team play during the fall. The wait sucked but it was worth it when spring came around. </p>
+          <div class="close" data-type-close></div>
+        </div>
+        <div class="timeline-content-image">
+          <img src="california/bridge.jpg" alt="placeholder"/>
+        </div>
+      </div>
+       <div class="p-timeline-content" data-car="34">
+        <div class="timeline-content-card">
+          <h3 class="timeline-content-title bmw">March 2015</h3>
+          <time class="timeline-content-date" datetime="2019-08-01"></time>
+          <p>I was sadly not able to be on the varisity team but I got good enough to where I was able to make during my junior year of high school. I was 3rd doubles and 5th singles. Not the best but I have put in the effort to make it on the varsity team. I was able to maintain the spot during senior year for doubles but made it to 4th singles. </p>
+          <div class="close" data-type-close></div>
+        </div>
+        <div class="timeline-content-image">
+          <img src="wedding/wedding.jpg" alt="placeholder"/>
+        </div>
+      </div>
+      <div class="p-timeline-content" data-car="35">
+        <div class="timeline-content-card">
+          <h3 class="timeline-content-title bmw">Graduation</h3>
+          <time class="timeline-content-date" datetime="2019-09-01"></time>
+          <p> During my final year of high school, I had maintained my doubles and singles positions. Once I graduated, I got a certificate. When the time came to look for colleges, I made sure there was a tennis team so I could continue to improve my skills. Fun fact: my sisters played tennis through high school but did not continue playing in college like I did.</p>
+          <div class="close" data-type-close></div>
+        </div>
+        <div class="timeline-content-image">
+          <img src="/portugal/mansion2.jpg" alt="placeholder"/>
+        </div>
+      </div>
+       <div class="p-timeline-content" data-car="36">
+        <div class="timeline-content-card">
+          <h3 class="timeline-content-title bmw">August 2018</h3>
+          <time class="timeline-content-date" datetime="2019-10-01"></time>
+          <p> College was interesting. After being told that men's tennis was only in spring during high school, I was happily shocked to find out that it happened during both fall and spring. It was coed but there was enough courts for us to practice. It was still a different ball game however, as the players in college was a lot more experience than in high school. I was lucky to make it on the team. I was 7th singles which is a substitute if any of the 6 players could not make the match but that was better than nothing. </p>
+          <div class="close" data-type-close></div>
+        </div>
+        <div class="timeline-content-image">
+          <img src="/spain/castle.jpg" alt="placeholder"/>
+        </div>
+      </div>
+      <div class="p-timeline-content" data-car="37">
+        <div class="timeline-content-card">
+          <h3 class="timeline-content-title bmw">2020</h3>
+          <time class="timeline-content-date" datetime="2019-11-01"></time>
+          <p> This is the COVID year. Due to COVID, we were sadly not able to continue sport activities. Even when we were able to go back class, the cases started to surge after a couple of weeks so they decided to suspend sport activities. After a couple months, the high cases thankfully went down but we lost the fall season. We tried to make up for it as much as we could during spring. </p>
+          <div class="close" data-type-close></div>
+        </div>
+        <div class="timeline-content-image">
+          <img src="/sedona/hike.jpg" alt="placeholder"/>
+        </div>
+      </div>
+       <div class="p-timeline-content" data-car="38">
+        <div class="timeline-content-card">
+          <h3 class="timeline-content-title mini">March 2022</h3>
+          <time class="timeline-content-date" datetime="2019-12-01"></time>
+          <p> This was final semester at college. In order to keep up with my grades, I sadly had to miss a few practices. However, this semester was light so I was able to make it to most of them. I was also able to make it 4th singles and 2nd doubles with my best friend as my partner. An interesting event that happened was that our bus broke down during April. The weirder part was that there was a snow storm. Thankfully, it was just outside of our college so we only had a short walk but that was certainly a memorable team experience as it happened at midnight. Once I graduated college, I received a similar certificate like the one I got back in high school. </p>
+          <div class="close" data-type-close></div>
+        </div>
+        <div class="timeline-content-image">
+          <video width="400" controls>
+                <source src="/alaska/boat.mp4" type="video/mp4">
+                <source src="/alaska/boat.mp4" type="video/ogg">
+                Your browser does not support HTML video.
+            </video>
+        </div>
+      </div>
+      
+      
+        <div class="p-timeline-content" data-car="40">
+        <div class="timeline-content-card">
+          <h3 class="timeline-content-title mini">Post College</h3>
+          <time class="timeline-content-date" datetime="2019-12-01"></time>
+          <p> After college, I would continue playing. I have not done any major leagues but I have played against my mother. She was a tennis player and is very good. We do not play any official matches but we work on strokes and serves when we can. </p>
+          <div class="close" data-type-close></div>
+        </div>
+        <div class="timeline-content-image">
+          <img src="/kenzie/kenzie.png" alt="placeholder"/>
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- partial -->
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script><script  src="./script.js"></script>
+  
+  <script>
+      //set up global variables for all functions to use
+  var item = '.timeline-item';
+  var content = '.p-timeline-content';
+  var active = 'i-is-active';
+  
+  //Handling events
+  $('.timeline-item').on('click', function(){ showTimelineContent(this); });
+  $('.close').on('click', function(){ closeCurrentContent(this); });
+
+  function showTimelineContent(element){
+    var itemId = $(element).find('.p-timeline-carmodel').attr('data-car');
+    var highlighted = $(element).find('.p-timeline-carmodel');
+
+    //Prevent having multiple items with the class i-is-active
+    if($(item).hasClass(active)){ $(item).removeClass(active); }
+  
+    //grab the id from the data attribute of each contentblock
+    $(content).each(function(){
+      var contentid = $(this).attr('data-car');
+
+      //check if timeline item id is equal to the content id
+      //If they're equal, show the content associated to that timeline item
+      if(itemId == contentid){
+        var current = $(content +'[data-car="'+contentid+'"]');
+        $(current).addClass(active);
+        $(element).addClass(active);
+
+        //If the content is not the selected (current) one
+        $(content).not(current).removeClass(active);
+
+        //Scroll to shown content
+        var target= $(current);
+        $('html, body').stop().animate({ scrollTop: target.offset().top }, 1000);
+      }
+    });
+  }
+
+ function closeCurrentContent(event){
+    var contentblock = $(event).parents(content);
+    var contentid = $(contentblock).attr('data-car');
+    $(item).each(function(){
+      var itemId = $(this).find('.p-timeline-carmodel').attr('data-car');
+      
+      if(itemId == contentid){
+        //move page back to timeline
+        var target= $('.timeline-title');
+        $('html, body').stop().animate({ scrollTop: target.offset().top }, 1000);
+        
+        //remove class i-is-active from highlighted item 
+        var currentItem = $(this).removeClass(active);
+        contentblock.removeClass(active);
+
+      }
+    });
+  }
+  
+  (function($) { // Begin jQuery
+  $(function() { // DOM ready
+    // If a link has a dropdown, add sub menu toggle.
+    $('nav ul li a:not(:only-child)').click(function(e) {
+      $(this).siblings('.nav-dropdown').toggle();
+      // Close one dropdown when selecting another
+      $('.nav-dropdown').not($(this).siblings()).hide();
+      e.stopPropagation();
+    });
+    // Clicking away from dropdown will remove the dropdown class
+    $('html').click(function() {
+      $('.nav-dropdown').hide();
+    });
+    // Toggle open and close nav styles on click
+    $('#nav-toggle').click(function() {
+      $('nav ul').slideToggle();
+    });
+    // Hamburger to X toggle
+    $('#nav-toggle').on('click', function() {
+      this.classList.toggle('active');
+    });
+  }); // end DOM ready
+})(jQuery); // end jQuery
+
+  </script>
+
+</body>
+</html>

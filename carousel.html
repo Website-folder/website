@@ -1,0 +1,358 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>title</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=font1|font2|etc" type="text/css">
+     <script src="https://kit.fontawesome.com/2c7fc28a2f.js"></script>
+      <style>
+*, html, body {
+  padding: 0;
+  margin: 0;
+  color: white;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  
+}
+
+#container {
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#galleryContainer { 
+  height: 500px;
+  width: 800px;
+  background: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
+  background-repeat: no-repeat;
+}
+
+#galleryView {
+  height: 100vh;
+  width: 100vw;
+  background: #219ebc;
+  background: #219ebc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+}
+
+#mainView {
+  height: 600px;
+  width: 400px;  
+  border-radius: 5px;
+  background-color: #219ebc;
+  background-repeat: no-repeat;
+  margin-left: 10px;
+  margin-right: 10px;
+  z-index: 1;
+  transition: all 1s;  
+}
+
+#mainView:hover {
+  transform: scale(1.05);
+  transition: all 1s;   
+}
+
+#leftView {
+  height: 600px;
+  width: 150px;
+  opacity: 0.5;
+  border-radius: 5px;
+  transform: skewy(5deg);
+  transform-origin: top right;
+  background-color: #219ebc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s;  
+  margin-top: 45px;
+}
+
+#leftView:hover {
+  opacity: 1;
+  transition: all 1s;
+}
+
+#rightView {
+  height: 600px;
+  width: 150px;
+  opacity: 0.5;
+  border-radius: 5px;
+  transform: skewy(-5deg);
+  transform-origin: top left;
+  background-color: #219ebc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ transition: all 1s;
+ margin-top: 45px;
+}
+
+#rightView:hover {
+  opacity: 1;
+  transition: all 1s;
+}
+
+.navBtns {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: none;
+  position: absolute;
+  opacity: 0.8;
+  background-color: transparent;
+  cursor: pointer;
+  color: white;
+}
+
+.navBtns:hover {
+  opacity: 1;
+  transition: all 1s;
+  background-color: #219ebc;
+}
+
+#navLeft {
+  left: 50px;
+  margin-top: 20px;
+}
+
+#navRight {
+  right: 50px;
+  margin-top: 20px;
+}
+
+/* slider 2*/
+#galleryContainer2 { 
+  height: 500px;
+  width: 800px;
+  background: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
+  background-repeat: no-repeat;
+}
+
+#galleryView2 {
+  height: 100vh;
+  width: 100vw;
+  background: #219ebc;
+  background: #219ebc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+}
+
+#mainView2 {
+  height: 600px;
+  width: 400px;  
+  border-radius: 5px;
+  background-color: #219ebc;
+  background-repeat: no-repeat;
+  margin-left: 10px;
+  margin-right: 10px;
+  z-index: 1;
+  transition: all 1s;  
+}
+
+#mainView2:hover {
+  transform: scale(1.05);
+  transition: all 1s;   
+}
+
+#leftView2 {
+  height: 600px;
+  width: 150px;
+  opacity: 0.5;
+  border-radius: 5px;
+  transform: skewy(5deg);
+  transform-origin: top right;
+  background-color: #219ebc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s;  
+  margin-top: 45px;
+}
+
+#leftView2:hover {
+  opacity: 1;
+  transition: all 1s;
+}
+
+#rightView2 {
+  height: 600px;
+  width: 150px;
+  opacity: 0.5;
+  border-radius: 5px;
+  transform: skewy(-5deg);
+  transform-origin: top left;
+  background-color: #219ebc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ transition: all 1s;
+ margin-top: 45px;
+}
+
+#rightView2:hover {
+  opacity: 1;
+  transition: all 1s;
+}
+
+.navBtns2 {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: none;
+  position: absolute;
+  opacity: 0.8;
+  background-color: transparent;
+  cursor: pointer;
+  color: white;
+}
+
+.navBtns2:hover {
+  opacity: 1;
+  transition: all 1s;
+  background-color: #219ebc;
+}
+
+#navLeft2 {
+  left: 50px;
+  margin-top: 20px;
+}
+
+#navRight2 {
+  right: 50px;
+  margin-top: 20px;
+}
+  </style>
+     
+  </head>
+  <body style="background: #219ebc">
+      
+           
+      <div id="galleryView" class="swiper-wrapper">
+        <div id="galleryContainer" class="swiper mySwiper">
+           <div id="leftView"></div>
+           <button id="navLeft" class="navBtns"><i class="fas fa-arrow-left fa-3x"></i></button>
+           <a id="linkTag"><h2 style="margin-left: 170px;">Movies</h2><br>
+              <div id="mainView"></div>
+           </a>
+           <div id="rightView"></div>
+           <button id="navRight" class="navBtns"><i class="fas fa-arrow-right fa-3x"></i></button>
+           </div>
+        </div>
+ 
+    
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+    <script>
+    
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+
+let imgObject = [
+  "https://thomascavanagh.com/Movies/gameover.jpg",
+  "https://thomascavanagh.com/Movies/dunkirk.jpg",
+  "https://thomascavanagh.com/Movies/maquia.webp",
+  "https://thomascavanagh.com/Movies/planet.webp",
+  "https://thomascavanagh.com/Movies/nwh.webp",
+  "https://thomascavanagh.com/Movies/19.jpg",
+  "https://thomascavanagh.com/Movies/rebellion.jpg",
+  "https://thomascavanagh.com/Movies/bear.jpg",
+  "https://thomascavanagh.com/Movies/zathura.jpg",
+  "https://thomascavanagh.com/Movies/topgun.jpg",
+  "https://thomascavanagh.com/Movies/21.jpg",
+  "https://thomascavanagh.com/Movies/bolt.jpg",
+  "https://thomascavanagh.com/Movies/adam.jpg",
+  "https://thomascavanagh.com/Movies/name.jpg",
+  "https://thomascavanagh.com/Movies/monster.webp"
+];
+
+
+let mainImg = 0;
+let prevImg = imgObject.length - 1;
+let nextImg = 1;
+
+function loadGallery() {
+
+  let mainView = document.getElementById("mainView");
+  mainView.style.background = "url(" + imgObject[mainImg] + ")";
+
+  let leftView = document.getElementById("leftView");
+  leftView.style.background = "url(" + imgObject[prevImg] + ")";
+  
+  let rightView = document.getElementById("rightView");
+  rightView.style.background = "url(" + imgObject[nextImg] + ")";
+};
+
+function scrollRight() {
+  
+  prevImg = mainImg;
+  mainImg = nextImg;
+  if (nextImg >= (imgObject.length -1)) {
+    nextImg = 0;
+  } else {
+    nextImg++;
+  }; 
+  loadGallery();
+};
+
+function scrollLeft() {
+  nextImg = mainImg
+  mainImg = prevImg;
+   
+  if (prevImg === 0) {
+    prevImg = imgObject.length - 1;
+  } else {
+    prevImg--;
+  };
+  loadGallery();
+};
+
+document.getElementById("navRight").addEventListener("click", scrollRight);
+document.getElementById("navLeft").addEventListener("click", scrollLeft);
+document.getElementById("rightView").addEventListener("click", scrollRight);
+document.getElementById("leftView").addEventListener("click", scrollLeft);
+document.addEventListener('keyup',function(e){
+    if (e.keyCode === 37) {
+    scrollLeft();
+  } else if(e.keyCode === 39) {
+    scrollRight();
+  }
+});
+
+loadGallery();
+
+
+    </script>
+  </body>
+</html>

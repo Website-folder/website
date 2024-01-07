@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Thomas Cavanagh</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+
+<style>
+
+/* Nav */
+    @charset "UTF-8";
+.navigation {
+  height: 70px;
+  background: #bc3f21;
+}
+
+.brand {
+  position: absolute;
+  padding-left: 20px;
+  float: left;
+  line-height: 70px;
+  text-transform: uppercase;
+  font-size: 1.4em;
+}
+.brand a,
+.brand a:visited {
+  color: yellow;
+  text-decoration: none;
+}
+
+.nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+nav {
+  float: right;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  float: left;
+  position: relative;
+}
+nav ul li a,
+nav ul li a:visited {
+  display: block;
+  padding: 0 20px;
+  line-height: 70px;
+  background: #219ebc;
+  color: black;
+  text-decoration: none;
+}
+nav ul li a:hover,
+nav ul li a:visited:hover {
+  background: #bc3f21;
+  color: yellow;
+}
+nav ul li a:not(:only-child):after,
+nav ul li a:visited:not(:only-child):after {
+  padding-left: 4px;
+  content: " ▾";
+}
+nav ul li ul li {
+  min-width: 190px;
+}
+nav ul li ul li a {
+  padding: 15px;
+  line-height: 20px;
+}
+
+.nav-dropdown {
+  position: absolute;
+  display: none;
+  z-index: 1;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile navigation */
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #219ebc;
+  height: 70px;
+  width: 70px;
+}
+
+@media only screen and (max-width: 798px) {
+  .nav-mobile {
+    display: block;
+  }
+
+  nav {
+    width: 100%;
+    padding: 70px 0 15px;
+  }
+  nav ul {
+    display: none;
+  }
+  nav ul li {
+    float: none;
+  }
+  nav ul li a {
+    padding: 15px;
+    line-height: 20px;
+  }
+  nav ul li ul li a {
+    padding-left: 30px;
+  }
+
+  .nav-dropdown {
+    position: static;
+  }
+}
+@media screen and (min-width: 799px) {
+  .nav-list {
+    display: block !important;
+  }
+}
+#nav-toggle {
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+}
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: #bc3f21;
+  position: absolute;
+  display: block;
+  content: "";
+  transition: all 300ms ease-in-out;
+}
+#nav-toggle span:before {
+  top: -10px;
+}
+#nav-toggle span:after {
+  bottom: -10px;
+}
+#nav-toggle.active span {
+  background-color: transparent;
+}
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+  top: 0;
+}
+#nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+  transform: rotate(-45deg);
+}
+
+article {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+
+/* portfolio  */
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.row {
+  margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column */
+.row2,
+.row2 > .column2 {
+  padding: 8px;
+}
+
+/* Create four equal columns that floats next to each other */
+.column2 {
+  float: left;
+  width: 25%;
+  margin-left: 45px;
+}
+
+/* Clear floats after rows */ 
+.row2:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: white;
+  padding: 10px;
+}
+
+
+
+/* slideshow */
+
+/* center div*/
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.fade{
+  display: none;
+  animation-name: fade;
+  animation-duration: 2.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* School */
+/* Container for image text */
+
+
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+ float: left;
+  width: 16.66%;
+ 
+}
+
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+.row {
+  margin: 8px -16px;
+   max-height: 95px; 
+}
+
+h1{
+        color: #023047;
+    }
+
+h2 {
+    color: #023047;
+}
+
+.footer{
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 12%;
+   background-color: #bc3f21;
+   color: white;
+   text-align: center;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+   background: #219ebc;
+}
+
+</style>
+
+</head>
+<body>
+    
+<!-- Nav -->
+<section class="navigation">
+  <div class="nav-container">
+    <div class="brand">
+      <a href="thomascavanagh.com">Home</a>
+    </div>
+    <nav>
+      <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+      <ul class="nav-list">
+        <li>
+          <a href="#!" style="background: #bc3f21;
+  color: yellow;">Education</a>
+          <ul class="nav-dropdown">
+            <li>
+              <a href="#!">High School</a>
+            </li>
+            <li>
+              <a href="#!">College</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#!" style="background: #bc3f21;
+  color: yellow;">Hobbies</a>
+          <ul class="nav-dropdown">
+            <li>
+              <a href="#!">Outdoors</a>
+            </li>
+            <li>
+              <a href="#!">Entertainment</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#!" style="background: #bc3f21;
+  color: yellow;" >Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  
+  
+  
+  <br>
+  <br>
+   <br>
+  <br>
+  
+  
+  <h2 style="text-align:center">Education</h2>
+
+
+<!-- MAIN (Center website) -->
+<div class="main">
+
+<!-- Portfolio Gallery Grid -->
+<div class="row2">
+  <div class="column2">
+    <div class="content">
+         <a href="https://thomascavanagh.com/education.html">
+      <img src="/HighSchool/new-hope-solbury-high-school.jpg" alt="1-12" style="width:100%"></a>
+      <h3>New Hope Solebury</h3>
+      <p>I went to New Hope Solebury for the first twevle years of my life. They held different grades in different schools on the same campus.</p>
+    </div>
+  </div>
+  <div class="column2">
+    <div class="content">
+        <a href="https://thomascavanagh.com/college.html">
+    <img src="/College/Penn-College-Campus.jpg" alt="College" style="width:100%"></a>
+      <h3>Pennsilvania College of Technology</h3>
+      <p>Once I graduated high school, I went to Pennsilvania College of Technology to earn a bachelors degree in computer science: web & interactive media. </p>
+    </div>
+  </div>
+  
+   <div class="column2">
+    <div class="content">
+        <a href="https://thomascavanagh.com/college.html">
+    <img src="/College/bucks-college.webp" alt="College" style="width:100%"></a>
+      <h3>Bucks Community College</h3>
+      <p>In order to graduate on time due to starting late, I applied for a summer course. The course I took here was to fulfill an English credit.</p>
+    </div>
+  </div>
+  
+  </div>
+  <h2 style="text-align:center">Job Experience</h2>
+
+
+<!-- MAIN (Center website) -->
+<div class="main">
+
+<!-- Portfolio Gallery Grid -->
+<div class="row2">
+  <div class="column2" style="margin-left: 200px;">
+    <div class="content">
+        <a href="https://thomascavanagh.com/college.html">
+      <img src="/Jobs/cock-n-bull-in-winter.jpg" alt="1-12" style="width:100%"></a>
+      <h3>Cock N Bull</h3>
+      <p>During the summer of 2020, I applied for a full time job to earn some extra cash. </p>
+    </div>
+  </div>
+  <div class="column2">
+    <div class="content">
+        <a href="https://thomascavanagh.com/college.html">
+    <img src="/Jobs/giant.jpg" alt="College" style="width:100%"></a>
+      <h3>Giant</h3>
+      <p> I applied for another job during the same summer for the same reason. I did some odd jobs such as moving carts and restocking shelves. </p>
+    </div>
+  </div>
+  </div>
+  </div>
+</div>
+
+<!-- slideshow -->
+<h2 style="text-align:center">Hobbies</h2>
+
+
+<div class="main">
+<div class="container">
+  <div class="mySlides fade">
+    
+   <a href="https://thomascavanagh.com/outdoors.html"> <img src="/Hiking/Sedona/trail.jpg" style="width:100%; max-height: 550px;"></a>
+  </div>
+
+  <div class="mySlides fade">
+   
+  <a href="https://thomascavanagh.com/outdoors.html"><img src="/Traveling/Alaska/FUOD5G9UAAAFpJY.jpg" style="width:100%; max-height: 550px;"></a>
+  </div>
+
+  <div class="mySlides fade">
+    
+  <a href="https://thomascavanagh.com/outdoors.html">  <img src="/Tennis/College/IMG_0670.jpg" style="width:100%; max-height: 550px;"></a>
+  </div>
+    
+  <div class="mySlides fade">
+    
+   <a href="https://thomascavanagh.com/entertainment.html"><img src="Movies/spy.jpg" style="width:100%; max-height: 550px;"></a>
+  </div>
+
+  <div class="mySlides fade">
+    
+    <a href="https://thomascavanagh.com/entertainment.html"><img src="Anime/aoi.png" style="width:100%; max-height: 550px;"></a>
+  </div>
+    
+  <div class="mySlides fade">
+    
+    <a href="https://thomascavanagh.com/entertainment.html"><img src="Manga/hero.jpg" style="width:100%; max-height: 550px;"></a>
+  </div>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+     
+    <div class="column">
+      <img class="demo cursor" src="/Hiking/Sedona/trail.jpg" style="width:100%; max-height: 95px; margin-left: 15px;" onclick="currentSlide(1)" alt="Hiking">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="/Traveling/Alaska/ok.jpg" style="width:100%; margin-left: 15px;" onclick="currentSlide(2)" alt="Traveling">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="/Tennis/College/team.jpg" style="width:100%; max-height: 95px; margin-left: 15px;" onclick="currentSlide(3)" alt="Tennis">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Movies/spy.jpg" style="width:100%; max-height: 95px; margin-left: 15px;" onclick="currentSlide(4)" alt="Movies">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Anime/aoi.png" style="width:100%; max-height: 95px; margin-left: 15px;" onclick="currentSlide(5)" alt="Anime">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="Manga/kill.jpg" style="max-width:100%; max-height: 95px; margin-left: 15px;" onclick="currentSlide(6)" alt="Manga">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Footer -->
+<div class="footer">
+  <p><a href="tel:+2676895369" style="color: white;">Phone #: 267-689-5369</a> <br>
+  <a href="mailto:tommycav513@gmail.com" style="color: white" id=email>Email: tommycav513@gmail.com </a><br>
+  Current Residence: 622 Coach Drive, New Hope PA</p>
+</div>
+  
+  
+  
+</section>
+<!-- partial -->
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+  <script>
+      (function($) { // Begin jQuery
+  $(function() { // DOM ready
+    // If a link has a dropdown, add sub menu toggle.
+    $('nav ul li a:not(:only-child)').click(function(e) {
+      $(this).siblings('.nav-dropdown').toggle();
+      // Close one dropdown when selecting another
+      $('.nav-dropdown').not($(this).siblings()).hide();
+      e.stopPropagation();
+    });
+    // Clicking away from dropdown will remove the dropdown class
+    $('html').click(function() {
+      $('.nav-dropdown').hide();
+    });
+    // Toggle open and close nav styles on click
+    $('#nav-toggle').click(function() {
+      $('nav ul').slideToggle();
+    });
+    // Hamburger to X toggle
+    $('#nav-toggle').on('click', function() {
+      this.classList.toggle('active');
+    });
+  }); // end DOM ready
+})(jQuery); // end jQuery
+
+
+//slideshow
+let slideIndex = 0;
+showSlides(slideIndex);
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  
+   slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  
+  
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+  setTimeout(showSlides, 4000); // Change image every 4 seconds
+  
+  
+}
+  </script>
+
+</body>
+</html>

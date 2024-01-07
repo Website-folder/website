@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Thomas Cavanagh</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<title>Thomas Cavanagh</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+   background: #219ebc;
+}
+
+/* Nav */
+    @charset "UTF-8";
+.navigation {
+  height: 70px;
+  background: #bc3f21;
+}
+
+.brand {
+  position: absolute;
+  padding-left: 20px;
+  float: left;
+  line-height: 70px;
+  text-transform: uppercase;
+  font-size: 1.4em;
+}
+.brand a,
+.brand a:visited {
+  color: yellow;
+  text-decoration: none;
+}
+
+.nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+nav {
+  float: right;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  float: left;
+  position: relative;
+}
+nav ul li a,
+nav ul li a:visited {
+  display: block;
+  padding: 0 20px;
+  line-height: 70px;
+  background: #219ebc;
+  color: black;
+  text-decoration: none;
+}
+nav ul li a:hover,
+nav ul li a:visited:hover {
+  background: #bc3f21;
+  color: yellow;
+}
+nav ul li a:not(:only-child):after,
+nav ul li a:visited:not(:only-child):after {
+  padding-left: 4px;
+  content: " ▾";
+}
+nav ul li ul li {
+  min-width: 190px;
+}
+nav ul li ul li a {
+  padding: 15px;
+  line-height: 20px;
+}
+
+.nav-dropdown {
+  position: absolute;
+  display: none;
+  z-index: 1;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile navigation */
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #219ebc;
+  
+  height: 70px;
+  width: 70px;
+}
+
+@media only screen and (max-width: 798px) {
+  .nav-mobile {
+    display: block;
+  }
+
+  nav {
+    width: 100%;
+    padding: 70px 0 15px;
+  }
+  nav ul {
+    display: none;
+  }
+  nav ul li {
+    float: none;
+  }
+  nav ul li a {
+    padding: 15px;
+    line-height: 20px;
+  }
+  nav ul li ul li a {
+    padding-left: 30px;
+  }
+
+  .nav-dropdown {
+    position: static;
+  }
+}
+@media screen and (min-width: 799px) {
+  .nav-list {
+    display: block !important;
+  }
+}
+#nav-toggle {
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+}
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: #bc3f21;
+  position: absolute;
+  display: block;
+  content: "";
+  transition: all 300ms ease-in-out;
+}
+#nav-toggle span:before {
+  top: -10px;
+}
+#nav-toggle span:after {
+  bottom: -10px;
+}
+#nav-toggle.active span {
+  background-color: transparent;
+}
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+  top: 0;
+}
+#nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+  transform: rotate(-45deg);
+}
+
+article {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+
+h1{
+        color: #023047;
+    }
+
+h2 {
+    color: #023047;
+}
+
+.footer{
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #bc3f21;
+   color: white;
+   text-align: center;
+}
+  
+    
+    .main {
+  max-width: 400px;
+  margin: auto;
+}
+    
+      html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+
+      body {
+          margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+   background: #219ebc;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
+
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .swiper {
+        margin-left: auto;
+        margin-right: auto;
+      }
+</style>
+</head>
+<body>
+<!-- Nav -->
+<section class="navigation">
+  <div class="nav-container">
+    <div class="brand">
+      <a href="default.html">Home</a>
+    </div>
+    <nav>
+      <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+      <ul class="nav-list">
+        <li>
+          <a href="#" style="background: #bc3f21;
+  color: yellow; text-align: left" >Education</a>
+          <ul class="nav-dropdown">
+            <li>
+              <a href="/education.html" style="text-align: left">High School</a>
+            </li>
+            <li>
+              <a href="/college.html" style="text-align: left">College</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" style="background: #bc3f21;
+  color: yellow; text-align: left">Hobbies</a>
+          <ul class="nav-dropdown">
+            <li>
+              <a href="/outdoors.html" style="text-align: left">Outdoors</a>
+            </li>
+            <li>
+              <a href="/entertainment.html" style="text-align: left">Entertainment</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/contact.html" style="background: #bc3f21;
+  color: yellow; text-align: left" >Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <br>
+    <br>
+      <br>
+      <br>
+
+    <!-- Swiper -->
+    <br>
+    <!-- MAIN (Center website) -->
+<div class="main">
+    <div class="swiper mySwiper" >
+        <h2 style="text-align:center">Movies</h2>
+        <br>
+      <div class="swiper-wrapper" style="z-index: -1;
+      ">
+        <div class="swiper-slide"> <img src="/Movies/gameover.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Movies/dunkirk.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Movies/maquia.webp" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Movies/planet.webp" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Movies/nwh.webp" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Movies/19.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Movies/rebellion.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Movies/bear.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Movies/zathura.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Movies/topgun.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Movies/21.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Movies/bolt.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Movies/adam.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Movies/name.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Movies/monster.webp" alt="Spy Kids"></div>
+      </div>
+       <br>
+             <br>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    </div>
+    <br>
+
+    <!-- MAIN (Center website) -->
+<div class="main">
+    <div class="swiper mySwiper" >
+        <h2 style="text-align:center">Anime</h2>
+        <br>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"> <img src="/Anime/ashi.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Anime/major.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Anime/captain.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Anime/dr.webp" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Anime/creators.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Anime/blue.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Anime/render.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Anime/higurashi.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Anime/86.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Anime/baku.jpg" alt="Spy Kids"></div>
+         <div class="swiper-slide"><img src="/Anime/clover.jpg" alt="Spy Kids"></div>
+          <div class="swiper-slide"><img src="/Anime/yaboy.jpg" alt="Spy Kids"></div>
+           <div class="swiper-slide"><img src="/Anime/space.png" alt="Spy Kids"></div>
+            <div class="swiper-slide"><img src="/Anime/raven.jpg" alt="Spy Kids"></div>
+             <div class="swiper-slide"><img src="/Anime/night.jpg" alt="Spy Kids"></div>
+      </div>
+       <br>
+            <br>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    </div>
+ 
+    <br>
+    <!-- MAIN (Center website) -->
+<div class="main">
+     <div class="swiper mySwiper">
+        <h2 style="text-align:center">Manga</h2>
+        <br>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"> <img src="/Manga/hero.webp" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Manga/fire.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Manga/zero.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Manga/can.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Manga/exceeds.webp" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Manga/linked.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Manga/promised.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Manga/sounds.webp" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Manga/mission.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Manga/gate.jpg" alt="Spy Kids"></div>
+          <div class="swiper-slide"><img src="/Manga/mha.png" alt="Spy Kids"></div>
+            <div class="swiper-slide"><img src="/Manga/mermaid.webp" alt="Spy Kids"></div>
+              <div class="swiper-slide"><img src="/Manga/moon.webp" alt="Spy Kids"></div>
+                <div class="swiper-slide"><img src="/Manga/twin.jpg" alt="Spy Kids"></div>
+                  <div class="swiper-slide"><img src="/Manga/welcome.jpg" alt="Spy Kids"></div>
+      </div>
+      <br>
+            <br>
+            
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    </div>
+    
+    <br>
+    
+    
+     <!-- MAIN (Center website) -->
+<div class="main">
+     <div class="swiper mySwiper">
+        <h2 style="text-align:center">Cartoons</h2>
+        <br>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"> <img src="/Cartoons/avatar.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Cartoons/mi.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Cartoons/code.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Cartoons/jlu.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Cartoons/10.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Cartoons/drama.webp" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Cartoons/danny.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Cartoons/rex.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Cartoons/yj.webp" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/Cartoons/jimmy.jpg" alt="Spy Kids"></div>
+         <div class="swiper-slide"><img src="/Cartoons/amazing.jpg" alt="Spy Kids"></div>
+          <div class="swiper-slide"><img src="/Cartoons/showdown.jpg" alt="Spy Kids"></div>
+           <div class="swiper-slide"><img src="/Cartoons/kids.webp" alt="Spy Kids"></div>
+            <div class="swiper-slide"><img src="/Cartoons/sym.webp" alt="Spy Kids"></div>
+             <div class="swiper-slide"><img src="/Cartoons/rocket.webp" alt="Spy Kids"></div>
+      </div>
+       <br>
+            <br>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    </div>
+ 
+    <br>
+    
+    <!-- MAIN (Center website) -->
+<div class="main">
+    <div class="swiper mySwiper">
+         <h2 style="text-align:center">Currently Watching</h2>
+        <br>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="/Anime/ichigo.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/live/list.jpg" alt="Spy Kids"></div>
+        <div class="swiper-slide"><img src="/live/world.jpg" alt="Spy Kids"></div>
+      </div>
+      
+       <br>
+            <br>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    </div>
+    
+      <!-- MAIN (Center website) -->
+<div class="main">
+    <div class="swiper mySwiper">
+         <h2 style="text-align:center"> Some Favorite Openings</h2>
+        <br>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <video width="400" controls>
+                <source src="/Openings/slime.mp4" type="video/mp4">
+                <source src="/Openings/slime.mp4" type="video/ogg">
+                Your browser does not support HTML video.
+            </video>
+        </div>
+        
+        <div class="swiper-slide">
+            <video width="400" controls>
+                <source src="/Openings/pokemon.mp4" type="video/mp4">
+                <source src="/Openings/pokemon.mp4" type="video/ogg">
+                Your browser does not support HTML video.
+            </video>
+        </div>
+        
+        <div class="swiper-slide">
+            <video width="400" controls>
+                <source src="/Openings/summer.mp4" type="video/mp4">
+                <source src="/Openings/summer.mp4" type="video/ogg">
+                Your browser does not support HTML video.
+            </video>
+        </div>
+        
+        <div class="swiper-slide">
+            <video width="400" controls>
+                <source src="/Openings/bakugan.mp4" type="video/mp4">
+                <source src="/Openings/bakugan.mp4" type="video/ogg">
+                Your browser does not support HTML video.
+            </video>
+        </div>
+        
+        <div class="swiper-slide">
+            <video width="400" controls>
+                <source src="/Openings/86.mp4" type="video/mp4">
+                <source src="/Openings/86.mp4" type="video/ogg">
+                Your browser does not support HTML video.
+            </video>
+        </div>
+        
+        <div class="swiper-slide">
+            <video width="400" height="225" controls>
+                <source src="/Openings/bleach.mp4" type="video/mp4">
+                <source src="/Openings/bleach.mp4" type="video/ogg">
+                Your browser does not support HTML video.
+            </video>
+        </div>
+        
+        <div class="swiper-slide">
+            <video width="400" controls>
+                <source src="/Openings/sotsu.mp4" type="video/mp4">
+                <source src="/Openings/sotsu.mp4" type="video/ogg">
+                Your browser does not support HTML video.
+            </video>
+        </div>
+        
+        <div class="swiper-slide">
+            <video width="400" controls>
+                <source src="/Openings/boruto.mp4" type="video/mp4">
+                <source src="/Openings/boruto.mp4" type="video/ogg">
+                Your browser does not support HTML video.
+            </video>
+        </div>
+        
+        <div class="swiper-slide">
+            <video width="400" controls>
+                <source src="/Openings/know.mp4" type="video/mp4">
+                <source src="/Openings/know.mp4" type="video/ogg">
+                Your browser does not support HTML video.
+            </video>
+        </div>
+        
+        <div class="swiper-slide">
+            <video width="400" controls>
+                <source src="/Openings/attack.mp4" type="video/mp4">
+                <source src="/Openings/attack.mp4" type="video/ogg">
+                Your browser does not support HTML video.
+            </video>
+        </div>
+        
+        <div class="swiper-slide">
+            <video width="400" controls>
+                <source src="/Openings/summoner.mp4" type="video/mp4">
+                <source src="/Openings/summoner.mp4" type="video/ogg">
+                Your browser does not support HTML video.
+            </video>
+        </div>
+        
+        <div class="swiper-slide">
+            <video width="400" controls>
+                <source src="/Openings/byebye.mp4" type="video/mp4">
+                <source src="/Openings/byebye.mp4" type="video/ogg">
+                Your browser does not support HTML video.
+            </video>
+        </div>
+        
+        <div class="swiper-slide">
+            <video width="400" controls>
+                <source src="/Openings/longshot.mp4" type="video/mp4">
+                <source src="/Openings/longshot.mp4" type="video/ogg">
+                Your browser does not support HTML video.
+            </video>
+        </div>
+        
+        <div class="swiper-slide">
+            <video width="400" controls>
+                <source src="/Openings/black.mp4" type="video/mp4">
+                <source src="/Openings/black.mp4" type="video/ogg">
+                Your browser does not support HTML video.
+            </video>
+        </div>
+        
+        <div class="swiper-slide">
+            <video width="400" controls>
+                <source src="/Openings/stranger.mp4" type="video/mp4">
+                <source src="/Openings/stranger.mp4" type="video/ogg">
+                Your browser does not support HTML video.
+            </video>
+        </div>
+        
+      </div>
+      
+       <br>
+            <br>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    </div>
+
+
+<!-- Footer -->
+<div class="footer" style="z-index: 1">
+  <p><a href="tel:+2676895369" style="color: white;">Phone #: 267-689-5369</a> <br>
+  <a href="mailto:tommycav513@gmail.com" style="color: white" id=email>Email: tommycav513@gmail.com </a><br>
+  Current Residence: 622 Coach Drive, New Hope PA</p>
+</div>
+
+
+ <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+
+<script>
+
+(function($) { // Begin jQuery
+  $(function() { // DOM ready
+    // If a link has a dropdown, add sub menu toggle.
+    $('nav ul li a:not(:only-child)').click(function(e) {
+      $(this).siblings('.nav-dropdown').toggle();
+      // Close one dropdown when selecting another
+      $('.nav-dropdown').not($(this).siblings()).hide();
+      e.stopPropagation();
+    });
+    // Clicking away from dropdown will remove the dropdown class
+    $('html').click(function() {
+      $('.nav-dropdown').hide();
+    });
+    // Toggle open and close nav styles on click
+    $('#nav-toggle').click(function() {
+      $('nav ul').slideToggle();
+    });
+    // Hamburger to X toggle
+    $('#nav-toggle').on('click', function() {
+      this.classList.toggle('active');
+    });
+  }); // end DOM ready
+})(jQuery); // end jQuery
+
+
+//nav 
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
+
+var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+
+</script>
+
+</body>
+</html>
